@@ -62,11 +62,49 @@ header {
   background-color: #3882f6;
   color: #e5e7eb;
   font-size: 18px;
+  font-weight: 700;
   border: none;
   border-radius: 8px;
   padding: 6px 24px;
 }
 
-.hero div *  {
-    margin-bottom: 18px;
+.hero div * {
+  margin-bottom: 18px;
+}
+
+.information {
+  padding: 56px 0px 64px;
+}
+
+.information h2 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.illustration {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+}
+
+.illustration section div {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #3882f6;
+  border-radius: 12px;
+}
+
+.illustration section p {
+  width: 150px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.illustration section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
