@@ -12,4 +12,4 @@ Projects from Colt Steele's "The Web Developer Bootcamp" on Udemy:
 
 ### The Odin Project
 Projects from The Odin Project:
-- [Add project names here as you complete them]
+- Landing Page
