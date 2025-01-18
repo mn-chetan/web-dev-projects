@@ -173,3 +173,14 @@ header {
 .action-box div * {
   margin-bottom: 8px;
 }
+
+footer {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+footer p {
+  text-align: center;
+  padding: 36px;
+  font-weight: 400;
+}
