@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(45deg, #0f172a, #1e293b);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 4rem;
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #60a5fa, #818cf8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: #94a3b8;
+      }
+
+      .projects-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .project-section {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+        transform: translateY(50px);
+        opacity: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .project-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #f1f5f9;
+      }
+
+      .project-list {
+        display: none;
+        list-style: none;
+      }
+
+      .project-list.active {
+        display: block;
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      .project-item {
+        background: rgba(255, 255, 255, 0.1);
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .project-item a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .project-item a:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .project-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .project-item:hover a:before {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      @media (max-width: 768px) {
+        .projects-container {
+          flex-direction: column;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .project-section {
+          margin-bottom: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="particles"></canvas>
+    <div class="container">
+      <header>
+        <h1>Web Development Portfolio</h1>
+        <p class="subtitle">
+          Exploring the world of web development through projects
+        </p>
+      </header>
+
+      <div class="projects-container">
+        <div class="project-section" id="course-projects">
+          <h2>Course Projects</h2>
+          <ul class="project-list">
+            <li class="project-item">
+              <a href="./Course-Projects/Fancy-Hover-Button/index.html"
+                >Fancy Hover Button</a
+              >
+            </li>
+            <li class="project-item">
+              <a href="./Course-Projects/Photo-Blog/index.html">Photo Blog</a>
+            </li>
+            <li class="project-item">
+              <a href="./Course-Projects/Pricing-Panel/index.html"
+                >Pricing Panel</a
+              >
+            </li>
+            <li class="project-item">
+              <a href="./Course-Projects/Responsive-Nav/index.html"
+                >Responsive Navigation</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-section" id="odin-projects">
+          <h2>Odin Projects</h2>
+          <ul class="project-list">
+            <li class="project-item">
+              <a href="#">Coming Soon...</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Initialize GSAP animations
+      gsap.to("header", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.to(".project-section", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.5,
+      });
+
+      // Handle project section clicks
+      document.querySelectorAll(".project-section").forEach((section) => {
+        section.addEventListener("click", () => {
+          const list = section.querySelector(".project-list");
+          const wasActive = list.classList.contains("active");
+
+          // Hide all lists first
+          document.querySelectorAll(".project-list").forEach((l) => {
+            l.classList.remove("active");
+          });
+
+          if (!wasActive) {
+            list.classList.add("active");
+            // Animate list items
+            list.querySelectorAll(".project-item").forEach((item, index) => {
+              gsap.fromTo(
+                item,
+                { opacity: 0, x: -20 },
+                {
+                  opacity: 1,
+                  x: 0,
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }
+              );
+            });
+          }
+        });
+      });
+
+      // Particle animation
+      const canvas = document.querySelector(".particles");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.speedX = Math.random() * 0.5 - 0.25;
+          this.speedY = Math.random() * 0.5 - 0.25;
+          this.opacity = Math.random() * 0.5;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (
+            this.x < 0 ||
+            this.x > canvas.width ||
+            this.y < 0 ||
+            this.y > canvas.height
+          ) {
+            this.reset();
+          }
+        }
+
+        draw() {
+          ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        for (let i = 0; i < 50; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((particle) => {
+          particle.update();
+          particle.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+
+      initParticles();
+      animate();
+    </script>
+  </body>
+</html>
