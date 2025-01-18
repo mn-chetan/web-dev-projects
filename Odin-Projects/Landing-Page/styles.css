@@ -73,7 +73,7 @@ header {
 }
 
 .information {
-  padding: 56px 0px 64px;
+  padding: 56px 0px 84px;
 }
 
 .information h2 {
@@ -108,4 +108,26 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.quote {
+  background-color: #e5e7eb;
+  padding: 100px 0;
+}
+
+.quote p:nth-child(1) {
+  font-size: 36px;
+  color: #1f2937;
+  font-style: italic;
+  font-weight: 200;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.quote p:nth-child(2) {
+  width: 700px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 24px;
+  font-weight: 500;
 }
