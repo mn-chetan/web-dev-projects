@@ -110,12 +110,12 @@ header {
   align-items: center;
 }
 
-.quote {
+blockquote.quote {
   background-color: #e5e7eb;
   padding: 100px 0;
 }
 
-.quote p:nth-child(1) {
+blockquote.quote p {
   font-size: 36px;
   color: #1f2937;
   font-style: italic;
@@ -124,7 +124,8 @@ header {
   margin: 0 auto;
 }
 
-.quote p:nth-child(2) {
+blockquote.quote cite {
+  display: block;
   width: 700px;
   margin: 0 auto;
   text-align: right;
