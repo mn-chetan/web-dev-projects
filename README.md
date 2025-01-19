@@ -1,6 +1,8 @@
 # web-dev-projects
 Collection of web development projects from various courses and learning resources.
 
+🚀 [View Live Demos](https://mn-chetan.github.io/web-dev-projects/)
+
 ## Projects Included
 
 ### Colt Steele's Web Development Course
