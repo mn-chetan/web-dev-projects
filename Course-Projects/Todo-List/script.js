@@ -17,7 +17,7 @@ while (true) {
     console.log("*".repeat(12));
   } else if (action === "delete") {
     let indexOfTodoTORemove = parseInt(prompt("Enter index of todo to delete"));
-    while (indexOfTodoTORemove === NaN) {
+    while (isNaN(indexOfTodoTORemove)) {
       indexOfTodoTORemove = parseInt(prompt("Enter index of todo to delete"));
     }
     todos.splice(indexOfTodoTORemove, 1);
