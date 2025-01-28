@@ -7,9 +7,44 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const userChoice = prompt(
-    "Choose rock, paper, or scissors. Please type it out exactly as typed out here."
-  );
+  const userChoice = prompt("Enter rock, paper, or scissors.");
 
   return userChoice;
 }
+
+let humanScore = 0,
+  computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice.toLowerCase() === computerChoice) {
+    console.log("It's a tie!");
+    return;
+  }
+
+  if (humanChoice.toLowerCase() === "rock") {
+    if (computerChoice === "scissors") {
+      console.log("You win! Rock beats Scissors.");
+      humanScore++;
+    } else {
+      console.log("You lose! Paper beats Rock.");
+      computerScore++;
+    }
+  } else if (humanChoice.toLowerCase() === "paper") {
+    if (computerChoice === "rock") {
+      console.log("You win! Paper beats Rock.");
+      humanScore++;
+    } else {
+      console.log("You lose! Scissors beats Paper.");
+      computerScore++;
+    }
+  } else if (humanChoice.toLowerCase() === "scissors") {
+    if (computerChoice === "paper") {
+      console.log("You win! Scissors beats Paper.");
+      humanScore++;
+    } else {
+      console.log("You lose! Rock beats Scissors");
+      computerScore++;
+    }
+  }
+}
+
