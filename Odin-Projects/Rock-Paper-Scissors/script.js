@@ -5,3 +5,11 @@ function getComputerChoice() {
   else if (randomChoice === 1) return "paper";
   else return "scissors";
 }
+
+function getHumanChoice() {
+  const userChoice = prompt(
+    "Choose rock, paper, or scissors. Please type it out exactly as typed out here."
+  );
+
+  return userChoice;
+}
