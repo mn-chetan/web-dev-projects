@@ -15,3 +15,4 @@ Projects from Colt Steele's "The Web Developer Bootcamp" on Udemy:
 ### The Odin Project
 Projects from The Odin Project:
 - Landing Page
+- Rock Paper Scissors
