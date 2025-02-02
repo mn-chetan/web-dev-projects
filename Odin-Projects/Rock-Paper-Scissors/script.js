@@ -33,7 +33,7 @@ function playGame() {
     displayScore();
 
     if (humanScore === 5 || computerScore === 5) {
-      alert("Game over! Refresh the screen to play again.");
+      announceWinner();
       playerChoices.removeEventListener("click", handleClick);
     }
   }
@@ -54,6 +54,14 @@ function playGame() {
       humanScore++;
     } else if (winPair[computerChoice] === playerChoice) {
       computerScore++;
+    }
+  }
+
+  function announceWinner() {
+    if (humanScore === 5) {
+      alert("Congratulations! You won the game.");
+    } else if (computerScore === 5) {
+      alert("The computer won the game. Better luck next time!");
     }
   }
 
