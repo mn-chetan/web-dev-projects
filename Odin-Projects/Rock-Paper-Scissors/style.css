@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .player,
@@ -10,9 +11,26 @@
 }
 
 .middle {
-  width: 60%;
+  display: flex;
+  gap: 24px;
+  margin: 0 48px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+}
+
+.middle img {
+  height: 80px;
+  width: 80px;
+}
+
+.player button,
+.computer button {
+  padding: 12px;
+  margin: 8px;
+  cursor: pointer;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #f0f0f0;
 }
