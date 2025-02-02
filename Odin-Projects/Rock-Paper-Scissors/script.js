@@ -4,9 +4,9 @@ function getComputerChoice() {
 }
 
 const playerChoices = document.querySelector(".player");
-const playerImg = document.querySelector(".middle section img:nth-of-type(1)");
+const playerImg = document.querySelector(".middle section:nth-of-type(1) img");
 const computerImg = document.querySelector(
-  ".middle section img:nth-of-type(2)"
+  ".middle section:nth-of-type(2) img"
 );
 
 function playRound() {
