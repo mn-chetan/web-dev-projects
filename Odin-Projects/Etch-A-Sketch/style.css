@@ -1,0 +1,17 @@
+body {
+  background-color: #dfd3c3;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.square {
+  width: calc(100% / 16);
+  height: 40px;
+  border: 2px solid #596e79;
+  box-sizing: border-box;
+}
