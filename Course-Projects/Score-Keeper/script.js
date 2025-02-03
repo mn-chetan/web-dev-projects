@@ -10,14 +10,14 @@ for (let button of buttons) {
     // Make scores 0 if reset button is clicked
     if (e.target.id === "player-1") {
       if (parseInt(score_1.innerText) === parseInt(points.value) - 1) {
-        e.target.disabled = "true";
-        e.target.nextElementSibling.disabled = "true";
+        e.target.setAttribute("disabled", "true");
+        e.target.nextElementSibling.setAttribute("disabled", "true");
       }
       score_1.innerText = parseInt(score_1.innerText) + 1;
     } else if (e.target.id === "player-2") {
       if (parseInt(score_2.innerText) === parseInt(points.value) - 1) {
-        e.target.disabled = "true";
-        e.target.previousElementSibling.disabled = "true";
+        e.target.setAttribute("disabled", "true");
+        e.target.previousElementSibling.setAttribute("disabled", "true");
       }
       score_2.innerText = parseInt(score_2.innerText) + 1;
     } else {
