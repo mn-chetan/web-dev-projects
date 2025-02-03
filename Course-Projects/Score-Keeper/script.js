@@ -1,16 +1,32 @@
 const score_1 = document.querySelector("#score-1");
 const score_2 = document.querySelector("#score-2");
 
+const points = document.querySelector("select");
+
 const buttons = document.querySelectorAll(".players button");
 for (let button of buttons) {
   button.addEventListener("click", (e) => {
+    // Increment after every click
+    // Make scores 0 if reset button is clicked
     if (e.target.id === "player-1") {
+      if (parseInt(score_1.innerText) === parseInt(points.value) - 1) {
+        e.target.disabled = "true";
+        e.target.nextElementSibling.disabled = "true";
+      }
       score_1.innerText = parseInt(score_1.innerText) + 1;
     } else if (e.target.id === "player-2") {
+      if (parseInt(score_2.innerText) === parseInt(points.value) - 1) {
+        e.target.disabled = "true";
+        e.target.previousElementSibling.disabled = "true";
+      }
       score_2.innerText = parseInt(score_2.innerText) + 1;
     } else {
       score_1.innerText = 0;
       score_2.innerText = 0;
+      e.target.previousElementSibling.removeAttribute("disabled");
+      e.target.previousElementSibling.previousElementSibling.removeAttribute(
+        "disabled"
+      );
     }
   });
 }
