@@ -11,7 +11,6 @@ const createGrid = (gridSize = 16) => {
 
     // Adjust square size dynamically based on grid size
     div.style.width = `calc(100% / ${gridSize})`;
-    div.style.height = ``;
 
     container.appendChild(div);
 
