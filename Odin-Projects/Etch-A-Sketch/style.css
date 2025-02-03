@@ -4,14 +4,32 @@ body {
 
 .container {
   width: 80%;
+  height: (0.8 * 100vh);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping of squares */
   margin: 0 auto;
+  border: 2px solid #596e79; /* Optional border for container */
 }
 
 .square {
-  width: calc(100% / 16);
-  height: 40px;
   border: 2px solid #596e79;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures borders are included in the element's width */
+  background-color: #eee; /* Light background for visibility */
+  transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #596e79;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3e4e56;
 }
