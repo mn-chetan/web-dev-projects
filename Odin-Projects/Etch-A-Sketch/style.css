@@ -4,7 +4,7 @@ body {
 
 .container {
   width: 80%;
-  height: (0.8 * 100vh);
+  height: 80vh;
   display: flex;
   flex-wrap: wrap; /* Allows wrapping of squares */
   margin: 0 auto;
