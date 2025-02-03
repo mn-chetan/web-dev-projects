@@ -9,21 +9,50 @@
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     />
   </head>
+
   <body>
-    <h1><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
-
-    <select name="" id="playto">
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-
-    <button id="p1Button">+1 Player One</button>
-    <button id="p2Button">+1 Player Two</button>
-    <button id="reset">Reset</button>
+    <div class="columns">
+      <div class="column is-one-fifth"></div>
+      <div class="column is-three-fifths">
+        <div class="card">
+          <header class="card-header">
+            <h1 class="title is-1">
+              <span id="p1Display">0</span> to <span id="p2Display">0</span>
+            </h1>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle is-4">Use the buttons below to keep score</p>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-medium">
+                <label for="playto" class="label">Playing To</label>
+              </div>
+              <div class="select is-link is-rounded is-medium is-hovered">
+                <select name="" id="playto">
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <button id="p1Button" class="card-footer-item">
+              +1 Player One
+            </button>
+            <button id="p2Button" class="card-footer-item">
+              +1 Player Two
+            </button>
+            <button id="reset" class="card-footer-item">Reset</button>
+          </footer>
+        </div>
+      </div>
+      <div class="column is-one-fifth"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
