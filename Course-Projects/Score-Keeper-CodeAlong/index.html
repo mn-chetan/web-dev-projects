@@ -11,48 +11,100 @@
   </head>
 
   <body>
-    <div class="columns">
-      <div class="column is-one-fifth"></div>
-      <div class="column is-three-fifths">
-        <div class="card">
-          <header class="card-header">
-            <h1 class="title is-1">
-              <span id="p1Display">0</span> to <span id="p2Display">0</span>
-            </h1>
-          </header>
-          <div class="card-content">
-            <div class="content">
-              <p class="subtitle is-4">Use the buttons below to keep score</p>
-            </div>
-            <div class="field is-horizontal">
-              <div class="field-label is-medium">
-                <label for="playto" class="label">Playing To</label>
-              </div>
-              <div class="select is-link is-rounded is-medium is-hovered">
-                <select name="" id="playto">
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
+    <section class="hero is-link is-fullheight">
+      <div class="hero-head">
+        <div class="container has-text-centered">
+          <div class="image is-128x128 is-inline-block mb-4">
+            <img
+              src="img/lisa-keffer-i0kB5B9J8Ds-unsplash.jpg"
+              alt="Ping Pong"
+              class="is-rounded"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
+          <p class="has-text-white">
+            Photo by
+            <a
+              href="https://unsplash.com/@likeffer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+              class="has-text-white"
+              >Lisa Keffer</a
+            >
+            on
+            <a
+              href="https://unsplash.com/photos/red-and-brown-wooden-table-tennis-racket-i0kB5B9J8Ds?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+              class="has-text-white"
+              >Unsplash</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="card">
+                <header class="card-header has-background-link">
+                  <h1 class="title is-2 has-text-white">
+                    <span id="p1Display">0</span> to
+                    <span id="p2Display">0</span>
+                  </h1>
+                </header>
+                <div class="card-content">
+                  <div class="content has-text-centered">
+                    <p class="subtitle is-4">
+                      Use the buttons below to keep score
+                    </p>
+                  </div>
+
+                  <div class="field">
+                    <div class="field-label is-medium">
+                      <label for="playto" class="label">Playing To</label>
+                    </div>
+                    <div class="select is-medium is-fullwidth">
+                      <select name="" id="playto">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <button
+                    id="p1Button"
+                    class="card-footer-item button is-link is-light"
+                  >
+                    +1 Player One
+                  </button>
+                  <button
+                    id="p2Button"
+                    class="card-footer-item button is-link is-light"
+                  >
+                    +1 Player Two
+                  </button>
+                  <button
+                    id="reset"
+                    class="card-footer-item button is-danger is-light"
+                  >
+                    Reset
+                  </button>
+                </footer>
               </div>
             </div>
           </div>
-          <footer class="card-footer">
-            <button id="p1Button" class="card-footer-item">
-              +1 Player One
-            </button>
-            <button id="p2Button" class="card-footer-item">
-              +1 Player Two
-            </button>
-            <button id="reset" class="card-footer-item">Reset</button>
-          </footer>
         </div>
       </div>
-      <div class="column is-one-fifth"></div>
-    </div>
+
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <p class="has-text-white">Built with Bulma</p>
+        </div>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
