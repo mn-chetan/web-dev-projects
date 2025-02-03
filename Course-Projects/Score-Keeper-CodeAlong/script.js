@@ -15,24 +15,22 @@ const winningScoreSelect = document.querySelector("#playto");
 let winningScore = 5,
   isGameOver = false;
 
-p1Button.addEventListener("click", () => {
+function updateScores(player) {
   if (!isGameOver) {
-    p1Score++;
-    if (p1Score === winningScore) {
+    player.score++;
+    if (player.score === winningScore) {
       isGameOver = true;
     }
-    p1Display.textContent = p1Score;
+    player.display.textContent = player.score;
   }
+}
+
+p1.button.addEventListener("click", () => {
+  updateScores(p1);
 });
 
-p2Button.addEventListener("click", () => {
-  if (!isGameOver) {
-    p2Score++;
-    if (p2Score === winningScore) {
-      isGameOver = true;
-    }
-    p2Display.textContent = p2Score;
-  }
+p2.button.addEventListener("click", () => {
+  updateScores(p2);
 });
 
 winningScoreSelect.addEventListener("change", (e) => {
@@ -42,10 +40,10 @@ winningScoreSelect.addEventListener("change", (e) => {
 
 const reset = () => {
   isGameOver = false;
-  p1Score = 0;
-  p2Score = 0;
-  p1Display.textContent = 0;
-  p2Display.textContent = 0;
+  p1.score = 0;
+  p2.score = 0;
+  p1.display.textContent = 0;
+  p2.display.textContent = 0;
 };
 
 resetButton.addEventListener("click", reset);
