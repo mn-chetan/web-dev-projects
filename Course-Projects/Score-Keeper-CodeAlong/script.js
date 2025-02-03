@@ -4,7 +4,7 @@ const p1 = {
   display: document.querySelector("#p1Display"),
 };
 
-const p1 = {
+const p2 = {
   score: 0,
   button: document.querySelector("#p2Button"),
   display: document.querySelector("#p2Display"),
