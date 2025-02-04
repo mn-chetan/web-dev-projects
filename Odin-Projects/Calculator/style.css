@@ -52,3 +52,15 @@ body {
   background-color: #69247c;
   color: #fac67a;
 }
+
+.display {
+  font-family: "Bebas Neue", serif;
+  font-size: 4.5rem;
+  text-align: right;
+}
+
+.btn.digit:hover {
+  background-color: #483d9e9d;
+  font-weight: 700;
+  outline: 2px solid #640D5F;
+}
