@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8e7f6;
+}
+
+.ui {
+  background-color: #cba35c;
+  padding: 8px;
+}
+
+.row {
+  display: flex;
+}
+
+.btn {
+  border: none;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  font-size: medium;
+}
+
+.span-2 {
+  border-radius: 100px;
+  flex-grow: 1;
+}
+
+.btn.digit {
+  background-color: #493d9e;
+  color: #dad2ff;
+}
+
+.btn.operator {
+  background-color: #f6ded8;
+  color: #b82132;
+}
+
+.btn.special {
+  background-color: #69247c;
+  color: #FAC67A;
+}
