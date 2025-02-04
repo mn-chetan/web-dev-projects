@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  font-family: "Kanit", serif;
+  font-weight: 500;
 }
 
 body {
@@ -13,18 +15,22 @@ body {
 .ui {
   background-color: #cba35c;
   padding: 8px;
+  border-radius: 1.8rem;
 }
 
 .row {
   display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 18px;
 }
 
 .btn {
   border: none;
   border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
-  font-size: medium;
+  height: 4rem;
+  width: 4rem;
+  font-size: 2em;
 }
 
 .span-2 {
@@ -44,5 +50,5 @@ body {
 
 .btn.special {
   background-color: #69247c;
-  color: #FAC67A;
+  color: #fac67a;
 }
