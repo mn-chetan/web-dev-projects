@@ -10,6 +10,16 @@ body {
 }
 
 .ui {
-  width: 40%;
-  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui div {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+#zero {
+  flex-grow: 1;
 }
