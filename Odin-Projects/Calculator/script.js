@@ -20,6 +20,12 @@ const display = document.querySelector(".display");
 const digits = document.querySelectorAll(".digit");
 for (let digit of digits) {
   digit.addEventListener("click", (e) => {
-    display.textContent += e.target.textContent;
+    if (display.textContent === "0") {
+      display.textContent = "";
+    }
+
+    if (display.textContent.length < 9) {
+      display.textContent += e.target.textContent;
+    }
   });
 }
