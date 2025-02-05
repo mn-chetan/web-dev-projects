@@ -29,3 +29,15 @@ for (let digit of digits) {
     }
   });
 }
+
+const operators = document.querySelectorAll(".operator");
+for (let operator of operators) {
+  operator.addEventListener("click", (e) => {
+    if (e.target.textContent !== "=") {
+      number1 = parseInt(display.textContent);
+      operator = e.target.textContent;
+      console.log(operator);
+      display.textContent = 0;
+    }
+  });
+}
