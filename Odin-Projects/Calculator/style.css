@@ -62,5 +62,17 @@ body {
 .btn.digit:hover {
   background-color: #483d9e9d;
   font-weight: 700;
-  outline: 2px solid #640D5F;
+  outline: 2px solid #640d5f;
+}
+
+.btn.operator:hover {
+  background-color: #f6ded89d;
+  font-weight: 700;
+  outline: 2px solid #497d74;
+}
+
+.btn.special:hover {
+  background-color: #69247c9d;
+  font-weight: 700;
+  outline: 2px solid #73c7c7;
 }
