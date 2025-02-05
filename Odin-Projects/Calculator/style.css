@@ -59,8 +59,7 @@ body {
   font-family: "Bebas Neue", serif;
   font-size: 4.5rem;
   text-align: right;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
 }
 
 .btn.digit:hover {
