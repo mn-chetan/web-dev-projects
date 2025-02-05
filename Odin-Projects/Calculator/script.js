@@ -14,3 +14,12 @@ const operatorMapping = {
 
 const operate = (number1, operator, number2) =>
   operatorMapping[operator](number1, number2);
+
+const display = document.querySelector(".display");
+
+const digits = document.querySelectorAll(".digit");
+for (let digit of digits) {
+  digit.addEventListener("click", (e) => {
+    display.textContent += e.target.textContent;
+  });
+}
