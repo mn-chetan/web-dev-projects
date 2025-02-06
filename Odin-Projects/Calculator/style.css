@@ -53,3 +53,13 @@ body {
 #clear {
   background-color: #f95959;
 }
+
+.btn.primary:hover,
+.btn.primary:focus {
+  background-color: #ef6eae;
+}
+
+.btn.secondary:hover,
+.btn.secondary:focus {
+  background-color: #9fd3c7;
+}
