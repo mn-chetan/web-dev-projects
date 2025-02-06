@@ -22,13 +22,20 @@ const display = document.querySelector(".display");
 const digits = document.querySelectorAll(".digit");
 for (let digit of digits) {
   digit.addEventListener("click", (e) => {
+    const clickedDigit = e.target.textContent;
+
     if (newNumber) {
-      display.textContent = "";
+      display.textContent = clickedDigit === "." ? "0." : clickedDigit;
       newNumber = false;
+      return;
+    }
+
+    if (clickedDigit === "." && display.textContent.includes(".")) {
+      return;
     }
 
     if (display.textContent.length < 9) {
-      display.textContent += e.target.textContent;
+      display.textContent += clickedDigit;
     }
   });
 }
