@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ui {
+  width: 25%;
+  height: 80vh;
+}
+
+.display {
+  background-color: #f95959;
+  height: 45%;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.buttons {
+  background-color: #233142;
+  height: 55%;
+  border-radius: 0 0 2rem 2rem;
+}
