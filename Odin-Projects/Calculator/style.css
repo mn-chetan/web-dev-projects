@@ -10,7 +10,7 @@ body {
 }
 
 .ui {
-  width: 25%;
+  width: 20%;
   height: 80vh;
 }
 
@@ -33,8 +33,22 @@ body {
   margin: 0.6rem 0.2rem;
   border: none;
   height: 2.65rem;
+  background-color: transparent;
 }
 
 #equal {
   width: calc((100% - 1.2rem) / 2);
+  border-radius: 0 0 1.5rem 0;
+}
+
+.btn.primary {
+  color: #e3e3e3;
+}
+
+.btn.secondary {
+  color: #f95959;
+}
+
+#equal, #clear {
+  background-color: #f95959;
 }
