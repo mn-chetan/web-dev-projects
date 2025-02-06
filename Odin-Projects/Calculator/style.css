@@ -27,7 +27,7 @@ body {
   padding: 1rem;
 }
 
-.buttons .btn {
+.btn {
   width: calc((100% - 2rem - 0.4rem) / 4);
   font-size: 1.25rem;
   margin: 0.6rem 0.2rem;
@@ -49,6 +49,7 @@ body {
   color: #f95959;
 }
 
-#equal, #clear {
+#equal,
+#clear {
   background-color: #f95959;
 }
