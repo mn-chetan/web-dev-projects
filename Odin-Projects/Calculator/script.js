@@ -55,3 +55,20 @@ for (let opr of operators) {
     }
   });
 }
+
+const specials = document.querySelectorAll(".special");
+for (let special of specials) {
+  special.addEventListener("click", (e) => {
+    const clicked = e.target.textContent;
+    const num = parseFloat(display.textContent);
+
+    if (clicked === "AC") {
+      number = null;
+      operator = null;
+      display.textContent = "0";
+      newNumber = true;
+    } else if (clicked === "+/-") {
+      display.textContent = (-num).toString();
+    }
+  });
+}
