@@ -52,14 +52,18 @@ body {
 #equal,
 #clear {
   background-color: #f95959;
+  transition: box-shadow 0.7s linear;
 }
 
-.btn.primary:hover,
-.btn.primary:focus {
+.btn.primary:hover {
   background-color: #ef6eae;
 }
 
-.btn.secondary:hover,
-.btn.secondary:focus {
+.btn.secondary:hover {
   background-color: #9fd3c7;
+}
+
+#equal:hover,
+#clear:hover {
+  box-shadow: inset -4rem 4rem #7c73e6, inset 4rem 0 #7c73e6;
 }
