@@ -24,4 +24,29 @@ body {
   background-color: #233142;
   height: 55%;
   border-radius: 0 0 2rem 2rem;
+  padding: 1rem;
 }
+
+.buttons .btn {
+  width: calc((100% - 2rem) / 4);
+  font-size: 1.5rem;
+}
+
+
+/* .first-color { 
+	background: #233142; 
+}
+	
+.second-color { 
+	background: #455d7a; 
+}
+
+.third-color { 
+	background: #f95959; 
+}
+
+.fourth-color { 
+	background: #e3e3e3; 
+}
+
+https://dribbble.com/shots/8762577-Calculator-App */
