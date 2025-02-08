@@ -10,7 +10,7 @@ body {
   margin: 0;
 }
 
-section {
+.header {
   width: calc(0.45 * 100vw);
   height: 100vh;
   background-image: url(img/andre-benz-JnB8Gio4GZo-unsplash.jpg);
