@@ -18,6 +18,12 @@ body {
   background-color: #f95959;
   height: 45%;
   border-radius: 2rem 2rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0.6rem;
+  font-size: 3rem;
+  font-family: "Montserrat", serif;
 }
 
 .buttons {
