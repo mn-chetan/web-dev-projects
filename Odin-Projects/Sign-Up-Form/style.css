@@ -17,3 +17,29 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
+.logo-heading {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #16404d8d;
+  position: relative;
+  top: 15%;
+}
+
+.logo-heading .logo {
+  width: 13%;
+  height: 8%;
+}
+
+.logo-heading .heading {
+  font-family: "rock_stencildemoroughen";
+  font-size: 3rem;
+  color: #fce7c8;
+}
+
+.header .credit,
+.header .credit a {
+  color: #eae2c6;
+}
