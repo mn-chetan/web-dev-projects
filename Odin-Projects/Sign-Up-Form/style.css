@@ -119,8 +119,19 @@ body {
   border: 2px solid #d2665a;
 }
 
+.log-in {
+  margin-top: 1.5rem;
+}
+
 .log-in a {
   color: #430f58;
   font-weight: 600;
   text-decoration: none;
+}
+
+.input input:focus {
+  outline: none;
+  border: 2px solid #8dc6ff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
