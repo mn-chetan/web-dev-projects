@@ -27,37 +27,38 @@
         </p>
       </section>
       <section class="form">
-        <p>
+        <p class="bold">
           This is not a real online service! You know you need something like
           this in your life to help you realise your deepest dreams. Sign up
           <em>now</em> to get started.
         </p>
 
-        <p>You <em>know</em> you want to.</p>
+        <p class="bold">You <em>know</em> you want to.</p>
 
         <form action="">
           <div class="sign-up">
             <h2>Let's do this!</h2>
             <div class="row">
               <label for="fname">First Name</label>
-              <input type="text" name="fname" id="fname" />
+              <input type="text" name="fname" id="fname" required />
               <label for="lname">Last Name</label>
               <input type="text" name="lname" id="lname" />
             </div>
             <div class="row">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
               <label for="phone">Phone Number</label>
-              <input type="tel" name="phone" id="phone" />
+              <input type="tel" name="phone" id="phone" required />
             </div>
             <div class="row">
               <label for="password">Password</label>
-              <input type="password" name="password" id="password" />
+              <input type="password" name="password" id="password" required />
               <label for="confirm_password">Confirm Password</label>
               <input
                 type="password"
                 name="confirm_password"
                 id="confirm_password"
+                required
               />
             </div>
           </div>
