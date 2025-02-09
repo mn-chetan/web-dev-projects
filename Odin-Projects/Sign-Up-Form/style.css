@@ -52,3 +52,22 @@ body {
   width: 45vw;
   font-size: smaller;
 }
+
+.layout {
+  display: flex;
+}
+
+.form {
+  width: 55vw;
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 12px 0;
+}
