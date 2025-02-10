@@ -20,8 +20,9 @@ body {
   min-height: 100vh;
   color: var(--text-color);
   display: grid;
-  grid-template-rows: 0.5fr 1fr 1fr 2fr;
+  grid-template-rows: 0.4fr 1fr 1fr 1fr;
   font-size: 1.2rem;
+  padding-left: 0.5rem;
 }
 
 .sidebar div {
@@ -38,9 +39,22 @@ body {
 #dashboard {
   height: 2rem;
   width: 2rem;
+  fill: var(--text-color);
 }
 
 .sidebar h2 {
   display: flex;
   gap: 0.5rem;
+}
+
+.group-1 svg {
+  height: 1.2rem;
+  width: 1.2rem;
+  fill: var(--text-color);
+}
+
+.group-1 a {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
