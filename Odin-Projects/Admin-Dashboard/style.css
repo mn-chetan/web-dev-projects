@@ -80,3 +80,22 @@ h2 {
 .container .group-1 {
   margin-bottom: 1rem;
 }
+
+.header {
+  background-color: #e3d5ca;
+}
+
+.toucan {
+  width: 60px;
+  height: 60px;
+  background-color: #cdb4db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toucan img {
+  width: 48px;
+  height: 48px;
+}
