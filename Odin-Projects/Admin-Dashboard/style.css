@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "limelightregular";
+  src: url("fonts/limelight-regular-webfont.woff2") format("woff2"),
+    url("fonts/limelight-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
 }
@@ -32,6 +40,8 @@ h2 {
   column-gap: var(--column-gap);
   padding-left: 0.65rem;
   padding-top: 0.35rem;
+  font-family: "limelightregular", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .container .group-1,
