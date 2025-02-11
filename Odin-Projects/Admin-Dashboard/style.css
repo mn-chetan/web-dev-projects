@@ -86,8 +86,6 @@ h2 {
 }
 
 .toucan {
-  width: 70px;
-  height: 70px;
   background-color: #cdb4db;
   border-radius: 50%;
   display: flex;
@@ -95,7 +93,40 @@ h2 {
   justify-content: center;
 }
 
-.toucan img {
+.toucan.size-1 {
+  width: 40px;
+  height: 40px;
+}
+
+.toucan.size-2 {
+  width: 70px;
+  height: 70px;
+}
+
+.toucan.size-1 img {
+  width: 30px;
+  height: 30px;
+}
+
+.toucan.size-2 img {
   width: 48px;
   height: 48px;
+}
+
+.header .row-1 {
+  display: grid;
+  grid-template-columns: 50px 20px 3fr 8% 50px 50px auto 50px;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.header input[type="search"] {
+  height: 1.5rem;
+  border-radius: 1rem 1rem;
+  border: none;
+  grid-column: 3 / 4;
+}
+
+.bell-ring {
+  grid-column: 4 / 5;
 }
