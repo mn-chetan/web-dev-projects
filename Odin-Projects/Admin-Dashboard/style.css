@@ -226,3 +226,9 @@ button {
   gap: 0.8rem;
   padding: 1rem 0 0 1rem;
 }
+
+.action-symbols {
+  align-self: flex-end;
+  display: flex;
+  gap: 0.3rem;
+}
