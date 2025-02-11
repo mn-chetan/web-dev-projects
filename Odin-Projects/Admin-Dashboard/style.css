@@ -14,11 +14,12 @@
 }
 
 body {
-  margin: 0;
   font-family: var(--main-font);
 }
 
-h2 {
+body,
+h2,
+p {
   margin: 0;
 }
 
@@ -164,4 +165,19 @@ h2 {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: inherit;
+}
+
+.header .row-2 .greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.header .row-2 .greeting p:first-child {
+  font-size: large;
+  font-weight: 400;
+}
+
+.header .row-2 .greeting p:last-child {
+  font-size: larger;
+  font-weight: 700;
 }
