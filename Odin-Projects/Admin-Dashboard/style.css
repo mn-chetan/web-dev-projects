@@ -19,7 +19,8 @@ body {
 
 body,
 h2,
-p {
+p,
+blockquote {
   margin: 0;
 }
 
@@ -100,7 +101,6 @@ button {
   background-color: #e3d5ca;
   grid-row: 1 / 2;
   grid-column: 2 / 3;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .toucan {
@@ -191,4 +191,12 @@ button {
 .header .row-2 .greeting p:last-child {
   font-size: larger;
   font-weight: 700;
+}
+
+.main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  background-color: #f7ede2;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
