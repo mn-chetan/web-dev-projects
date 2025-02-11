@@ -163,4 +163,5 @@ h2 {
 .header .row-2 button {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: inherit;
 }
