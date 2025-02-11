@@ -115,18 +115,28 @@ h2 {
 
 .header .row-1 {
   display: grid;
-  grid-template-columns: 50px 20px 3fr 8% 50px 50px auto 50px;
+  grid-template-columns: 20px 38rem 100px 60px 60px auto;
   align-items: center;
   column-gap: 0.5rem;
+  margin-top: 0.65rem;
+  margin-left: 2rem;
 }
 
 .header input[type="search"] {
   height: 1.5rem;
   border-radius: 1rem 1rem;
   border: none;
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
+  background-color: #95857c;
+  color: #edede9;
+  font-size: 1rem;
 }
 
 .bell-ring {
   grid-column: 4 / 5;
+}
+
+.row-1 h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
