@@ -165,13 +165,14 @@ button {
   margin: 1rem 0 0 2.3rem;
   align-items: center;
   margin-right: 5.6rem;
+  margin-top: 1.5rem;
 }
 
 .header .row-2 button {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: inherit;
-  width: 5rem;
+  width: 6rem;
   height: 2.5rem;
   border-radius: 1.5rem;
 }
