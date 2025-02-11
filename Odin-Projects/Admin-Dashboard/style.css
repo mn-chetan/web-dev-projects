@@ -232,3 +232,15 @@ button {
   display: flex;
   gap: 0.3rem;
 }
+
+.card h2 {
+  font-size: 1rem;
+}
+
+.card blockquote {
+  font-size: 0.8rem;
+}
+
+.card cite {
+  font-size: 0.7rem;
+}
