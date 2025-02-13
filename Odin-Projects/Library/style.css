@@ -19,9 +19,18 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
+  grid-auto-rows: minmax(200px, auto);
+  gap: 1rem;
 }
 
 h1 {
   text-align: center;
+}
+
+.book {
+  background-color: #fdf0d5;
+  color: #003049;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
