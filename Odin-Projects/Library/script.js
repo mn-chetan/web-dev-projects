@@ -47,32 +47,3 @@ function displayBook() {
     container.append(bookCard);
   });
 }
-
-// Add 20 sample books to the library
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, true);
-addBookToLibrary("1984", "George Orwell", 328, true);
-addBookToLibrary("Pride and Prejudice", "Jane Austen", 432, false);
-addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
-addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
-addBookToLibrary("Dune", "Frank Herbert", 412, false);
-addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", 234, true);
-addBookToLibrary("Brave New World", "Aldous Huxley", 311, false);
-addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1178, true);
-addBookToLibrary("Crime and Punishment", "Fyodor Dostoevsky", 671, false);
-addBookToLibrary("The Odyssey", "Homer", 541, true);
-addBookToLibrary("Jane Eyre", "Charlotte Brontë", 532, false);
-addBookToLibrary("The Picture of Dorian Gray", "Oscar Wilde", 254, true);
-addBookToLibrary("Fahrenheit 451", "Ray Bradbury", 249, true);
-addBookToLibrary(
-  "One Hundred Years of Solitude",
-  "Gabriel García Márquez",
-  417,
-  false
-);
-addBookToLibrary("The Divine Comedy", "Dante Alighieri", 798, true);
-addBookToLibrary("Moby Dick", "Herman Melville", 585, false);
-addBookToLibrary("Don Quixote", "Miguel de Cervantes", 863, true);
-addBookToLibrary("The Count of Monte Cristo", "Alexandre Dumas", 1276, false);
-addBookToLibrary("War and Peace", "Leo Tolstoy", 1225, true);
-
-displayBook();

@@ -8,6 +8,7 @@
 
 * {
   margin: 0;
+  border: none;
   box-sizing: border-box;
 }
 
@@ -23,10 +24,12 @@ body {
   gap: 1rem;
   justify-items: center;
   padding: 1rem;
+  margin-top: 1.5rem;
 }
 
 h1 {
   text-align: center;
+  font-size: 2.5rem;
 }
 
 .book {
@@ -36,7 +39,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  width: 100%;
   padding: 1rem;
   margin: 0 1rem;
+  width: 250px;
+}
+
+#add {
+  color: #c1121f;
+  background-color: inherit;
+  font-size: 2rem;
 }
