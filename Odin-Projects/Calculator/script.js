@@ -1,13 +1,8 @@
-const add = (a, b) => a + b;
-const subtract = (a, b) => a - b;
-const multiply = (a, b) => a * b;
-const divide = (a, b) => a / b;
-
 const operatorMapping = {
-  "+": add,
-  "-": subtract,
-  "×": multiply,
-  "÷": divide,
+  "+": (a, b) => a + b,
+  "-": (a, b) => a - b,
+  "×": (a, b) => a * b,
+  "÷": (a, b) => a / b,
 };
 
 const operate = (num1, num2, operator) => operatorMapping[operator](num1, num2);
