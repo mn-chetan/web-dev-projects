@@ -1,5 +1,22 @@
+@font-face {
+  font-family: "faustinalight";
+  src: url("fonts/faustina-variablefont_wght-webfont.woff2") format("woff2"),
+    url("fonts/faustina-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #ffe5d9;
+  font-family: "faustinalight", Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);;
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
+}
+
+h1 {
+  text-align: center;
 }
