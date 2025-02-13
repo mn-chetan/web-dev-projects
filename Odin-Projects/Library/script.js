@@ -14,5 +14,11 @@ Book.prototype.info = function () {
 };
 
 function addBookToLibrary(title, author, pages, read) {
-  myLibrary.push(Book.call(this, title, author, pages, read));
+  myLibrary.push(new Book(title, author, pages, read));
+}
+
+function displayBook() {
+  for (let book of myLibrary) {
+    console.log(book.info());
+  }
 }
