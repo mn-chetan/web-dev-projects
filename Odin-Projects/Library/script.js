@@ -31,6 +31,10 @@ function displayBook() {
       bookCard.append(p);
     }
 
+    const p = document.createElement("p");
+    p.textContent = book.read ? "Read" : "Not Read";
+    bookCard.append(p);
+
     container.append(bookCard);
   });
 }
