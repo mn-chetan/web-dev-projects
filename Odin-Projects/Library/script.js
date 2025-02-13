@@ -20,6 +20,8 @@ function addBookToLibrary(title, author, pages, read) {
 function displayBook() {
   const container = document.querySelector(".container");
 
+  container.textContent = "";
+
   myLibrary.forEach((book) => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book");
@@ -51,11 +53,21 @@ function displayBook() {
 const button = document.querySelector("#add");
 const dialog = document.querySelector("dialog");
 const submit = document.querySelector("button[type='submit']");
+const form = document.querySelector("form");
 
 button.addEventListener("click", () => {
   dialog.showModal();
 });
 
-submit.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(e.target[2]);
+  addBookToLibrary(
+    e.target[0].value,
+    e.target[1].value,
+    e.target[2].value,
+    e.target[3].value
+  );
   dialog.close();
+  displayBook();
 });
