@@ -47,3 +47,15 @@ function displayBook() {
     container.append(bookCard);
   });
 }
+
+const button = document.querySelector("#add");
+const dialog = document.querySelector("dialog");
+const submit = document.querySelector("button[type='submit']");
+
+button.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+submit.addEventListener("click", () => {
+  dialog.close();
+});
