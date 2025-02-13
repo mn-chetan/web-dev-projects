@@ -12,3 +12,7 @@ Book.prototype.info = function () {
     this.read ? "read" : "not read yet"
   }`;
 };
+
+function addBookToLibrary(title, author, pages, read) {
+  myLibrary.push(Book.call(this, title, author, pages, read));
+}
