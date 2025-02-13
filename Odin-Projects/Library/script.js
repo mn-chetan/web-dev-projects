@@ -18,7 +18,19 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayBook() {
-  for (let book of myLibrary) {
-    console.log(book.info());
-  }
+  const container = document.querySelector(".container");
+
+  myLibrary.forEach((book) => {
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("book");
+
+    const properties = [book.title, book.author, book.pages];
+    for (let property of properties) {
+      const p = document.createElement("p");
+      p.textContent = property;
+      bookCard.append(p);
+    }
+
+    container.append(bookCard);
+  });
 }
