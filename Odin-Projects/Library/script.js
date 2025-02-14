@@ -32,12 +32,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-Book.prototype.info = function () {
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${
-    this.read ? "read" : "not read yet"
-  }`;
-};
-
 function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(new Book(title, author, pages, read));
 }
@@ -84,12 +78,7 @@ function displayBook() {
     const readStatus = document.createElement("button");
     readStatus.textContent = "Read/Not Read";
     readStatus.addEventListener("click", (e) => {
-      console.log(myLibrary[e.target.parentNode.dataset.index].read);
-      myLibrary[e.target.parentNode.dataset.index].read = myLibrary[
-        e.target.parentNode.dataset.index
-      ].read
-        ? false
-        : true;
+      myLibrary[e.target.parentNode.dataset.index].toggleRead();
       displayBook();
     });
     bookCard.append(readStatus);
@@ -97,6 +86,10 @@ function displayBook() {
     container.append(bookCard);
   });
 }
+
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
 
 const button = document.querySelector("#add");
 const dialog = document.querySelector("dialog");
