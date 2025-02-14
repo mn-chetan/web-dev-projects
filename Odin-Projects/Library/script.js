@@ -1,4 +1,29 @@
-const myLibrary = [];
+const myLibrary = [
+  {
+    title: "One Hundred Years of Solitude",
+    author: "Gabriel García Márquez",
+    pages: 417,
+    read: true,
+  },
+  {
+    title: "The Name of the Wind",
+    author: "Patrick Rothfuss",
+    pages: 662,
+    read: true,
+  },
+  {
+    title: "Dune",
+    author: "Frank Herbert",
+    pages: 412,
+    read: false,
+  },
+  {
+    title: "Project Hail Mary",
+    author: "Andy Weir",
+    pages: 496,
+    read: false,
+  },
+].map((book) => new Book(book.title, book.author, book.pages, book.read));
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -47,6 +72,16 @@ function displayBook() {
     p.textContent = book.read ? "Read" : "Not Read";
     bookCard.append(p);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.classList.add("delete");
+    deleteButton.addEventListener("click", (e) => {
+      myLibrary.splice(e.target.parentNode.dataset.index, 1);
+      displayBook();
+    });
+
+    bookCard.append(deleteButton);
+
     container.append(bookCard);
   });
 }
@@ -76,3 +111,5 @@ form.addEventListener("submit", (e) => {
   dialog.close();
   displayBook();
 });
+
+displayBook();
