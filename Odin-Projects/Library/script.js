@@ -79,8 +79,20 @@ function displayBook() {
       myLibrary.splice(e.target.parentNode.dataset.index, 1);
       displayBook();
     });
-
     bookCard.append(deleteButton);
+
+    const readStatus = document.createElement("button");
+    readStatus.textContent = "Read/Not Read";
+    readStatus.addEventListener("click", (e) => {
+      console.log(myLibrary[e.target.parentNode.dataset.index].read);
+      myLibrary[e.target.parentNode.dataset.index].read = myLibrary[
+        e.target.parentNode.dataset.index
+      ].read
+        ? false
+        : true;
+      displayBook();
+    });
+    bookCard.append(readStatus);
 
     container.append(bookCard);
   });
