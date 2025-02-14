@@ -19,6 +19,7 @@ body {
 
 body,
 h2,
+h3,
 p,
 blockquote {
   margin: 0;
@@ -243,4 +244,31 @@ button {
 
 .card cite {
   font-size: 0.7rem;
+}
+
+.miscellaneous {
+  margin: 1.5rem 0 0 2rem;
+}
+
+.miscellaneous strong {
+  font-size: 1.2rem;
+}
+
+.announcements,
+.trending {
+  background-color: #f5cac3;
+}
+
+.announce-card:nth-of-type(2),
+.announce-card:nth-of-type(3) {
+  border-top: 2px solid #ff6700;
+}
+
+.announce-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.announcements {
+  padding: 1rem;
 }
