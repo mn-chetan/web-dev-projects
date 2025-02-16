@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Fascinate Inline";
+  src: url("fonts/FascinateInline-Regular.woff2") format("woff2"),
+    url("fonts/FascinateInline-Regular.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik Dirt";
+  src: url("fontx/RubikDirt-Regular.woff2") format("woff2"),
+    url("fonts/RubikDirt-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
