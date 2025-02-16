@@ -5,3 +5,26 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
+h1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: 6rem;
+}
+
+.primary {
+  color: #ffd500;
+}
+
+.secondary {
+  color: #baebff;
+}
+
+.result .btn span {
+  display: flex;
+  flex-direction: column;
+}
