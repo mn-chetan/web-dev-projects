@@ -46,19 +46,19 @@ h1 {
     "Trebuchet MS", sans-serif;
 }
 
-.gameboard {
-  background-color: #2b0040;
-  padding: 3rem;
-  border-radius: 1rem;
-  position: relative;
-}
-
 .primary {
   color: #ffd500;
 }
 
 .secondary {
   color: #baebff;
+}
+
+.gameboard {
+  background-color: #2b0040;
+  padding: 3rem;
+  border-radius: 1rem;
+  position: relative;
 }
 
 .btn {
