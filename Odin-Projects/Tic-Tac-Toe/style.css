@@ -18,6 +18,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Rubik Dirt";
 }
 
 :root {
@@ -41,6 +42,7 @@ h1 {
   flex-direction: column;
   margin: 0;
   font-size: 6rem;
+  font-family: "Fascinate Inline";
 }
 
 .gameboard {
