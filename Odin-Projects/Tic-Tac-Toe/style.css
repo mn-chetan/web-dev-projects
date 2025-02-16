@@ -38,6 +38,19 @@ h1 {
   width: 4rem;
   height: 4rem;
   border: none;
+  border-radius: 0.3rem;
+}
+
+.player-x {
+  background-color: #4cc9f0;
+}
+
+.draw {
+  background-color: #c8e7ff;
+}
+
+.player-0 {
+  background-color: #ffc300;
 }
 
 .result .btn span {
@@ -54,4 +67,8 @@ h1 {
 
 .marker {
   margin-top: 1.5rem;
+}
+
+.marker .btn {
+  background-color: #4b285d;
 }
