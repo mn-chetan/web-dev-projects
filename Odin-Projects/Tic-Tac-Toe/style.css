@@ -1,5 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #724cf9;
+  background-color: #7b2cbf;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +20,12 @@ h1 {
   font-size: 6rem;
 }
 
+.gameboard {
+  background-color: #2b0040;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+
 .primary {
   color: #ffd500;
 }
@@ -24,7 +34,24 @@ h1 {
   color: #baebff;
 }
 
+.btn {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+}
+
 .result .btn span {
   display: flex;
   flex-direction: column;
+}
+
+.marker,
+.result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.marker {
+  margin-top: 1.5rem;
 }
