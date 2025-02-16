@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --btn-border: none;
+  --btn-border-radius: 0.3rem;
+}
+
 body {
   background-color: #7b2cbf;
   display: flex;
@@ -24,6 +29,7 @@ h1 {
   background-color: #2b0040;
   padding: 3rem;
   border-radius: 1rem;
+  position: relative;
 }
 
 .primary {
@@ -37,8 +43,8 @@ h1 {
 .btn {
   width: 4rem;
   height: 4rem;
-  border: none;
-  border-radius: 0.3rem;
+  border: var(--btn-border);
+  border-radius: var(--btn-border-radius);
 }
 
 .player-x {
@@ -51,6 +57,11 @@ h1 {
 
 .player-0 {
   background-color: #ffc300;
+}
+
+.zero {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .result .btn span {
@@ -67,8 +78,21 @@ h1 {
 
 .marker {
   margin-top: 1.5rem;
+  margin-bottom: 5rem;
 }
 
 .marker .btn {
   background-color: #4b285d;
+}
+
+.new-game {
+  border: var(--btn-border);
+  border-radius: var(--btn-border-radius);
+  background-color: #f1faee;
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  font-weight: bold;
+  height: 2.3rem;
 }
