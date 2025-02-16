@@ -119,3 +119,9 @@ h1 {
   font-weight: bold;
   height: 2.3rem;
 }
+
+.new-game:hover,
+.new-game:focus {
+  background-color: #fd9bc6;
+  opacity: 0.8;
+}
