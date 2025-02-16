@@ -7,6 +7,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Orbitron";
+  src: url("fonts/Orbitron-Regular.woff2") format("woff2"),
+    url("fonts/Orbitron-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,6 +23,7 @@
 :root {
   --btn-border: none;
   --btn-border-radius: 0.3rem;
+  --font-family: "Orbitron", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -32,7 +42,8 @@ h1 {
   flex-direction: column;
   margin: 0;
   font-size: 6rem;
-  font-family: "Fascinate Inline";
+  font-family: "Fascinate Inline", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
 }
 
 .gameboard {
@@ -51,10 +62,11 @@ h1 {
 }
 
 .btn {
-  width: 4rem;
-  height: 4rem;
+  width: 4.8rem;
+  height: 4.8rem;
   border: var(--btn-border);
   border-radius: var(--btn-border-radius);
+  font-family: var(--font-family);
 }
 
 .player-x {
@@ -98,6 +110,7 @@ h1 {
 .new-game {
   border: var(--btn-border);
   border-radius: var(--btn-border-radius);
+  font-family: var(--font-family);
   background-color: #f1faee;
   position: absolute;
   left: 2rem;
