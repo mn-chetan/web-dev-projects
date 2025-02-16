@@ -125,3 +125,7 @@ h1 {
   background-color: #fd9bc6;
   opacity: 0.8;
 }
+
+.hover:hover {
+  background-color: #6b00a0;
+}
