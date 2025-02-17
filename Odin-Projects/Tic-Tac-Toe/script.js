@@ -93,7 +93,11 @@ const newGame = (() => {
           if (!p) {
             const newP = document.createElement("p");
             newP.textContent = e.target.textContent;
-            newP.classList.add("player-marker");
+            if (game.getCurrentPlayer() === "X") {
+              newP.classList.add("player-marker", "x-mark");
+            } else {
+              newP.classList.add("player-marker", "o-mark");
+            }
             const gameboard = document.querySelector(".gameboard");
             gameboard.append(newP);
           } else {
@@ -101,7 +105,11 @@ const newGame = (() => {
 
             const newP = document.createElement("p");
             newP.textContent = e.target.textContent;
-            newP.classList.add("player-marker");
+            if (game.getCurrentPlayer() === "X") {
+              newP.classList.add("player-marker", "x-mark");
+            } else {
+              newP.classList.add("player-marker", "o-mark");
+            }
             const gameboard = document.querySelector(".gameboard");
             gameboard.append(newP);
           }

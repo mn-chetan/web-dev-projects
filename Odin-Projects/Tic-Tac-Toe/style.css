@@ -141,5 +141,18 @@ h1 {
 }
 
 .player-marker {
-  color: green;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: var(--btn-border-radius);
+}
+
+.x-mark {
+  background-color: #4cc9f0;
+}
+
+.o-mark {
+  background-color: #ffc300;
 }
