@@ -13,3 +13,16 @@
     }
   });
 })();
+
+const turn = function () {
+  let count = 0;
+
+  return {
+    increment: function () {
+      count++;
+    },
+    getCurrentPlayer: function () {
+      return count % 2 === 0 ? "X" : "O";
+    },
+  };
+};
