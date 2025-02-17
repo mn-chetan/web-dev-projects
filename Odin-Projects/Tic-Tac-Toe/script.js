@@ -3,6 +3,9 @@ const gameBoard = (function () {
 
   return {
     getBoard: () => [...board],
+    addMarker: (marker, index) => {
+      if (board[index] === null) board[index] = marker;
+    },
     isWon: function () {
       const b = board;
 
@@ -28,3 +31,11 @@ const gameBoard = (function () {
 const player = function (marker) {
   return { marker };
 };
+
+// const playGame = function () {
+//   const board = gameBoard.getBoard();
+//   const player1 = player("X");
+//   const player2 = player("O");
+
+//   while (board.isWon()) {}
+// };
