@@ -105,6 +105,8 @@ h1 {
 
 .marker .btn {
   background-color: #4b285d;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
 .new-game {
@@ -128,4 +130,12 @@ h1 {
 
 .hover:hover {
   background-color: #6b00a0;
+}
+
+.x {
+  color: #4cc9f0;
+}
+
+.o {
+  color: #ffc300;
 }
