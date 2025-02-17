@@ -25,6 +25,12 @@ const gameBoard = () => {
         );
       });
     },
+    isDraw: () => {
+      return !board.includes(null);
+    },
+    reset: () => {
+      board.fill(null);
+    },
   };
 };
 
@@ -33,7 +39,30 @@ const player = (marker, score) => {
 };
 
 const playGame = () => {
-  const board = gameBoard.createBoard();
+  const board = gameBoard();
   const player1 = player("X", 0);
   const player2 = player("O", 0);
+  let currentPlayer = "X";
+
+  const switchPlayer = () => {
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+  };
+
+  const gameStatus = () => {
+    if (board.isWon()) {
+      board.reset();
+      return currentPlayer;
+    }
+
+    if (board.isDraw()) {
+      board.reset();
+      return 0;
+    }
+  };
+
+  const updateScore = () => {
+    currentPlayer === "X" ? player1.score++ : player2.score++;
+  };
+
+  return { switchPlayer, gameStatus, updateScore };
 };
