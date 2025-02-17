@@ -3,10 +3,6 @@ const gameBoard = (function () {
 
   return {
     getBoard: () => [...board],
-    isEmpty: (index) => board[index] === null,
-    addMarker: (marker, index) => {
-      if (board[index] === null) board[index] = marker;
-    },
     isWon: function () {
       const b = board;
 
@@ -24,6 +20,7 @@ const gameBoard = (function () {
         (b[2] !== null && b[2] === b[4] && b[2] === b[6])
       );
     },
+    isDraw: () => board.every((value) => value !== null),
     reset: () => board.fill(null),
   };
 })();
