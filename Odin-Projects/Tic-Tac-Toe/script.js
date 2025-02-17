@@ -2,7 +2,7 @@ const gameBoard = () => {
   const board = new Array(9).fill(null);
 
   return {
-    getBoard: () => [...board],
+    createBoard: () => board,
     addMarker: (marker, index) => {
       if (board[index] === null) board[index] = marker;
     },
@@ -26,4 +26,14 @@ const gameBoard = () => {
       });
     },
   };
+};
+
+const player = (marker, score) => {
+  return { marker, score };
+};
+
+const playGame = () => {
+  const board = gameBoard.createBoard();
+  const player1 = player("X", 0);
+  const player2 = player("O", 0);
 };
