@@ -82,10 +82,12 @@ const newGame = (() => {
     markers.addEventListener("click", (e) => {
       if (e.target.tagName === "BUTTON") {
         const currentPlayer = game.getCurrentPlayer();
-        currentPlayer === "X"
-          ? e.target.classList.add("x")
-          : e.target.classList.add("o");
-        e.target.textContent = currentPlayer;
+        if (e.target.textContent === "") {
+          currentPlayer === "X"
+            ? e.target.classList.add("x")
+            : e.target.classList.add("o");
+          e.target.textContent = currentPlayer;
+        }
 
         game
           .getBoard()
@@ -95,6 +97,8 @@ const newGame = (() => {
         if (status === 0) {
           const draw = document.querySelector(".draw .zero");
           draw.textContent = parseInt(draw.textContent + 1);
+          const newGameButton = document.createElement("button");
+          newGameButton.classList.add(".marker");
         } else if (status === "X") {
           const playerX = document.querySelector(".player-x .zero");
           playerX.textContent = parseInt(playerX.textContent + 1);
