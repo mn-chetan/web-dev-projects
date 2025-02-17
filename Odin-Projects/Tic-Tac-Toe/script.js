@@ -87,6 +87,24 @@ const newGame = (() => {
             ? e.target.classList.add("x")
             : e.target.classList.add("o");
           e.target.textContent = currentPlayer;
+
+          const p = document.querySelector(".player-marker");
+
+          if (!p) {
+            const newP = document.createElement("p");
+            newP.textContent = e.target.textContent;
+            newP.classList.add("player-marker");
+            const gameboard = document.querySelector(".gameboard");
+            gameboard.append(newP);
+          } else {
+            p.remove();
+
+            const newP = document.createElement("p");
+            newP.textContent = e.target.textContent;
+            newP.classList.add("player-marker");
+            const gameboard = document.querySelector(".gameboard");
+            gameboard.append(newP);
+          }
         }
 
         game

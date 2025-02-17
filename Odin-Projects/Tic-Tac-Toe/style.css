@@ -139,3 +139,7 @@ h1 {
 .o {
   color: #ffc300;
 }
+
+.player-marker {
+  color: green;
+}
