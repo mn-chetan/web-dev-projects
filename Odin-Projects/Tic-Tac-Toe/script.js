@@ -1,4 +1,4 @@
-// Start Game
+// Game Setup
 (function () {
   const newGame = document.querySelector(".new-game");
 
@@ -15,7 +15,7 @@
 })();
 
 // Keep track of current player
-const turn = function () {
+const createTurnManager = function () {
   let count = 0;
 
   return {
@@ -28,7 +28,7 @@ const turn = function () {
   };
 };
 
-const gameboard = function () {
+const createGameboard = function () {
   const markerPlacement = new Array(9);
   console.log(markerPlacement[0]);
 
@@ -77,3 +77,16 @@ const gameboard = function () {
     },
   };
 };
+
+const createGameController = function () {
+  const turnManager = createTurnManager();
+  const gameboard = createGameboard();
+
+  const marker = document.querySelector(".marker");
+  marker.addEventListener("click", (e) => {
+    console.log(e);
+  });
+};
+
+// Start the game
+const game = createGameController();
