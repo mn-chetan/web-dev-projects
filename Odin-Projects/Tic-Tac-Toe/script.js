@@ -14,6 +14,7 @@
   });
 })();
 
+// Keep track of current player
 const turn = function () {
   let count = 0;
 
@@ -23,6 +24,56 @@ const turn = function () {
     },
     getCurrentPlayer: function () {
       return count % 2 === 0 ? "X" : "O";
+    },
+  };
+};
+
+const gameboard = function () {
+  const markerPlacement = new Array(9);
+  console.log(markerPlacement[0]);
+
+  return {
+    isEmpty: function (index) {
+      return markerPlacement[index] === undefined;
+    },
+    placeMarker: function (index, player) {
+      // Update index with player marker ('X' or 'O')
+      markerPlacement[index] = player;
+    },
+    isWon: function () {
+      // Check if anybody has won
+      if (
+        // Horizontal Wins
+        (markerPlacement[0] !== undefined &&
+          markerPlacement[0] === markerPlacement[1] &&
+          markerPlacement[0] === markerPlacement[2]) ||
+        (markerPlacement[3] !== undefined &&
+          markerPlacement[3] === markerPlacement[4] &&
+          markerPlacement[3] === markerPlacement[5]) ||
+        (markerPlacement[6] !== undefined &&
+          markerPlacement[6] === markerPlacement[7] &&
+          markerPlacement[6] === markerPlacement[8]) ||
+        // Vertical Wins
+        (markerPlacement[0] !== undefined &&
+          markerPlacement[0] === markerPlacement[3] &&
+          markerPlacement[0] === markerPlacement[6]) ||
+        (markerPlacement[1] !== undefined &&
+          markerPlacement[1] === markerPlacement[4] &&
+          markerPlacement[1] === markerPlacement[7]) ||
+        (markerPlacement[2] !== undefined &&
+          markerPlacement[2] === markerPlacement[5] &&
+          markerPlacement[2] === markerPlacement[8]) ||
+        // Diagonal Wins
+        (markerPlacement[0] !== undefined &&
+          markerPlacement[0] === markerPlacement[4] &&
+          markerPlacement[0] === markerPlacement[8]) ||
+        (markerPlacement[2] !== undefined &&
+          markerPlacement[2] === markerPlacement[4] &&
+          markerPlacement[2] === markerPlacement[6])
+      ) {
+        return true;
+      }
+      return false;
     },
   };
 };
