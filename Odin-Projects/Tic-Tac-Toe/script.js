@@ -97,6 +97,14 @@ const newGame = (() => {
         if (status === 0) {
           const draw = document.querySelector(".draw .zero");
           draw.textContent = parseInt(draw.textContent + 1);
+        } else if (status === "X") {
+          const playerX = document.querySelector(".player-x .zero");
+          playerX.textContent = parseInt(playerX.textContent + 1);
+          game.updateScore();
+        } else if (status === "O") {
+          const playerO = document.querySelector(".player-x .zero");
+          playerO.textContent = parseInt(playerO.textContent + 1);
+          game.updateScore();
         }
       }
     });
