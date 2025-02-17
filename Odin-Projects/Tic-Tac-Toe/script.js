@@ -2,6 +2,7 @@ const gameBoard = () => {
   const board = new Array(9).fill(null);
 
   return {
+    displayBoard: () => board,
     addMarker: (marker, index) => {
       if (board[index] === null) board[index] = marker;
     },
@@ -43,6 +44,8 @@ const playGame = () => {
   const player2 = player("O", 0);
   let currentPlayer = "X";
 
+  const getBoard = () => board;
+
   const getCurrentPlayer = () => currentPlayer;
 
   const switchPlayer = () => {
@@ -65,7 +68,7 @@ const playGame = () => {
     currentPlayer === "X" ? player1.score++ : player2.score++;
   };
 
-  return { getCurrentPlayer, switchPlayer, gameStatus, updateScore };
+  return { getBoard, getCurrentPlayer, switchPlayer, gameStatus, updateScore };
 };
 
 const newGame = (() => {
@@ -78,10 +81,23 @@ const newGame = (() => {
     const markers = document.querySelector(".marker");
     markers.addEventListener("click", (e) => {
       if (e.target.tagName === "BUTTON") {
-        game.getCurrentPlayer() === "X"
+        const currentPlayer = game.getCurrentPlayer();
+        currentPlayer === "X"
           ? e.target.classList.add("x")
           : e.target.classList.add("o");
-        e.target.textContent = game.getCurrentPlayer();
+        e.target.textContent = currentPlayer;
+
+        game
+          .getBoard()
+          .addMarker(currentPlayer, parseInt(e.target.dataset.index));
+
+        game.switchPlayer();
+
+        const status = game.gameStatus();
+        if (status === 0) {
+          const draw = document.querySelector(".draw .zero");
+          draw.textContent = parseInt(draw.textContent + 1);
+        }
       }
     });
   });
