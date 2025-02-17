@@ -63,32 +63,14 @@ const playGame = () => {
     currentPlayer === "X" ? player1.score++ : player2.score++;
   };
 
-  return { currentPlayer, switchPlayer, gameStatus, updateScore };
-};
-
-const displayController = () => {
-  const updateDisplay = (playerMarker) => {
-    const marker = document.querySelector(".marker");
-    marker.addEventListener("click", (e) => {
-      if (e.target.tagName === "BUTTON") {
-        e.target.textContent = playerMarker;
-      }
-    });
-  };
-
-  return { updateDisplay };
+  return { switchPlayer, gameStatus, updateScore };
 };
 
 const newGame = (() => {
   const start = document.querySelector(".new-game");
   start.addEventListener("click", () => {
     start.remove();
-    const board = gameBoard();
     const game = playGame();
     const controller = displayController();
-
-    while (!board.isWon()) {
-      controller.updateDisplay(game.currentPlayer);
-    }
   });
 })();
