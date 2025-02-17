@@ -116,10 +116,42 @@ const newGame = (() => {
           const playerX = document.querySelector(".player-x .zero");
           playerX.textContent = parseInt(playerX.textContent) + 1;
           game.updateScore();
+
+          const newGameButton = document.createElement("button");
+          newGameButton.classList.add("new-game");
+          newGameButton.textContent = "New Game";
+          const gameboard = document.querySelector(".gameboard");
+          gameboard.append(newGameButton);
+
+          newGameButton.addEventListener("click", () => {
+            newGameButton.remove();
+            const cells = document.querySelectorAll(".marker .btn");
+            cells.forEach((cell) => {
+              cell.textContent = "";
+              cell.classList.remove("x", "o");
+            });
+            game.switchPlayer();
+          });
         } else if (status === "O") {
           const playerO = document.querySelector(".player-o .zero");
           playerO.textContent = parseInt(playerO.textContent) + 1;
           game.updateScore();
+
+          const newGameButton = document.createElement("button");
+          newGameButton.classList.add("new-game");
+          newGameButton.textContent = "New Game";
+          const gameboard = document.querySelector(".gameboard");
+          gameboard.append(newGameButton);
+
+          newGameButton.addEventListener("click", () => {
+            newGameButton.remove();
+            const cells = document.querySelectorAll(".marker .btn");
+            cells.forEach((cell) => {
+              cell.textContent = "";
+              cell.classList.remove("x", "o");
+            });
+            game.switchPlayer();
+          });
         }
 
         game.switchPlayer();
