@@ -1,3 +1,4 @@
+//
 const gameBoard = () => {
   const board = new Array(9).fill(null);
 
@@ -50,6 +51,7 @@ const playGame = () => {
 
   const switchPlayer = () => {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
+    updatePlayerIndicator();
   };
 
   const gameStatus = () => {
@@ -68,7 +70,32 @@ const playGame = () => {
     currentPlayer === "X" ? player1.score++ : player2.score++;
   };
 
-  return { getBoard, getCurrentPlayer, switchPlayer, gameStatus, updateScore };
+  const updatePlayerIndicator = () => {
+    const playerIndicator = document.querySelector(".player-marker");
+    if (playerIndicator) {
+      playerIndicator.textContent = currentPlayer;
+      playerIndicator.className = `player-marker ${
+        currentPlayer === "X" ? "x-mark" : "o-mark"
+      }`;
+    } else {
+      const newP = document.createElement("p");
+      newP.textContent = currentPlayer;
+      newP.className = `player-marker ${
+        currentPlayer === "X" ? "x-mark" : "o-mark"
+      }`;
+      const gameboard = document.querySelector(".gameboard");
+      gameboard.append(newP);
+    }
+  };
+
+  return {
+    getBoard,
+    getCurrentPlayer,
+    switchPlayer,
+    gameStatus,
+    updateScore,
+    updatePlayerIndicator,
+  };
 };
 
 const newGame = (() => {
@@ -77,6 +104,7 @@ const newGame = (() => {
     start.remove();
 
     const game = playGame();
+    game.updatePlayerIndicator(); // Show initial player indicator
 
     const markers = document.querySelector(".marker");
     markers.addEventListener("click", (e) => {
@@ -88,99 +116,73 @@ const newGame = (() => {
             : e.target.classList.add("o");
           e.target.textContent = currentPlayer;
 
-          const p = document.querySelector(".player-marker");
+          game
+            .getBoard()
+            .addMarker(currentPlayer, parseInt(e.target.dataset.index));
 
-          if (!p) {
-            const newP = document.createElement("p");
-            newP.textContent = e.target.textContent;
-            if (game.getCurrentPlayer() === "X") {
-              newP.classList.add("player-marker", "x-mark");
-            } else {
-              newP.classList.add("player-marker", "o-mark");
-            }
+          const status = game.gameStatus();
+          if (status === 0) {
+            const draw = document.querySelector(".draw .zero");
+            draw.textContent = parseInt(draw.textContent) + 1;
+            const newGameButton = document.createElement("button");
+            newGameButton.classList.add("new-game");
+            newGameButton.textContent = "New Game";
             const gameboard = document.querySelector(".gameboard");
-            gameboard.append(newP);
-          } else {
-            p.remove();
+            gameboard.append(newGameButton);
 
-            const newP = document.createElement("p");
-            newP.textContent = e.target.textContent;
-            if (game.getCurrentPlayer() === "X") {
-              newP.classList.add("player-marker", "x-mark");
-            } else {
-              newP.classList.add("player-marker", "o-mark");
-            }
+            newGameButton.addEventListener("click", () => {
+              newGameButton.remove();
+              const cells = document.querySelectorAll(".marker .btn");
+              cells.forEach((cell) => {
+                cell.textContent = "";
+                cell.classList.remove("x", "o");
+              });
+              game.switchPlayer();
+            });
+          } else if (status === "X") {
+            const playerX = document.querySelector(".player-x .zero");
+            playerX.textContent = parseInt(playerX.textContent) + 1;
+            game.updateScore();
+
+            const newGameButton = document.createElement("button");
+            newGameButton.classList.add("new-game");
+            newGameButton.textContent = "New Game";
             const gameboard = document.querySelector(".gameboard");
-            gameboard.append(newP);
+            gameboard.append(newGameButton);
+
+            newGameButton.addEventListener("click", () => {
+              newGameButton.remove();
+              const cells = document.querySelectorAll(".marker .btn");
+              cells.forEach((cell) => {
+                cell.textContent = "";
+                cell.classList.remove("x", "o");
+              });
+              game.switchPlayer();
+            });
+          } else if (status === "O") {
+            const playerO = document.querySelector(".player-o .zero");
+            playerO.textContent = parseInt(playerO.textContent) + 1;
+            game.updateScore();
+
+            const newGameButton = document.createElement("button");
+            newGameButton.classList.add("new-game");
+            newGameButton.textContent = "New Game";
+            const gameboard = document.querySelector(".gameboard");
+            gameboard.append(newGameButton);
+
+            newGameButton.addEventListener("click", () => {
+              newGameButton.remove();
+              const cells = document.querySelectorAll(".marker .btn");
+              cells.forEach((cell) => {
+                cell.textContent = "";
+                cell.classList.remove("x", "o");
+              });
+              game.switchPlayer();
+            });
           }
+
+          game.switchPlayer();
         }
-
-        game
-          .getBoard()
-          .addMarker(currentPlayer, parseInt(e.target.dataset.index));
-
-        const status = game.gameStatus();
-        if (status === 0) {
-          const draw = document.querySelector(".draw .zero");
-          draw.textContent = parseInt(draw.textContent) + 1;
-          const newGameButton = document.createElement("button");
-          newGameButton.classList.add("new-game");
-          newGameButton.textContent = "New Game";
-          const gameboard = document.querySelector(".gameboard");
-          gameboard.append(newGameButton);
-
-          newGameButton.addEventListener("click", () => {
-            newGameButton.remove();
-            const cells = document.querySelectorAll(".marker .btn");
-            cells.forEach((cell) => {
-              cell.textContent = "";
-              cell.classList.remove("x", "o");
-            });
-            game.switchPlayer();
-          });
-        } else if (status === "X") {
-          const playerX = document.querySelector(".player-x .zero");
-          playerX.textContent = parseInt(playerX.textContent) + 1;
-          game.updateScore();
-
-          const newGameButton = document.createElement("button");
-          newGameButton.classList.add("new-game");
-          newGameButton.textContent = "New Game";
-          const gameboard = document.querySelector(".gameboard");
-          gameboard.append(newGameButton);
-
-          newGameButton.addEventListener("click", () => {
-            newGameButton.remove();
-            const cells = document.querySelectorAll(".marker .btn");
-            cells.forEach((cell) => {
-              cell.textContent = "";
-              cell.classList.remove("x", "o");
-            });
-            game.switchPlayer();
-          });
-        } else if (status === "O") {
-          const playerO = document.querySelector(".player-o .zero");
-          playerO.textContent = parseInt(playerO.textContent) + 1;
-          game.updateScore();
-
-          const newGameButton = document.createElement("button");
-          newGameButton.classList.add("new-game");
-          newGameButton.textContent = "New Game";
-          const gameboard = document.querySelector(".gameboard");
-          gameboard.append(newGameButton);
-
-          newGameButton.addEventListener("click", () => {
-            newGameButton.remove();
-            const cells = document.querySelectorAll(".marker .btn");
-            cells.forEach((cell) => {
-              cell.textContent = "";
-              cell.classList.remove("x", "o");
-            });
-            game.switchPlayer();
-          });
-        }
-
-        game.switchPlayer();
       }
     });
   });
