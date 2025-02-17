@@ -43,6 +43,8 @@ const playGame = () => {
   const player2 = player("O", 0);
   let currentPlayer = "X";
 
+  const getCurrentPlayer = () => currentPlayer;
+
   const switchPlayer = () => {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
   };
@@ -63,14 +65,24 @@ const playGame = () => {
     currentPlayer === "X" ? player1.score++ : player2.score++;
   };
 
-  return { switchPlayer, gameStatus, updateScore };
+  return { getCurrentPlayer, switchPlayer, gameStatus, updateScore };
 };
 
 const newGame = (() => {
   const start = document.querySelector(".new-game");
   start.addEventListener("click", () => {
     start.remove();
+
     const game = playGame();
-    const controller = displayController();
+
+    const markers = document.querySelector(".marker");
+    markers.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        game.getCurrentPlayer() === "X"
+          ? e.target.classList.add("x")
+          : e.target.classList.add("o");
+        e.target.textContent = game.getCurrentPlayer();
+      }
+    });
   });
 })();
