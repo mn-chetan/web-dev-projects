@@ -91,8 +91,6 @@ const newGame = (() => {
           .getBoard()
           .addMarker(currentPlayer, parseInt(e.target.dataset.index));
 
-        game.switchPlayer();
-
         const status = game.gameStatus();
         if (status === 0) {
           const draw = document.querySelector(".draw .zero");
@@ -102,10 +100,12 @@ const newGame = (() => {
           playerX.textContent = parseInt(playerX.textContent + 1);
           game.updateScore();
         } else if (status === "O") {
-          const playerO = document.querySelector(".player-x .zero");
+          const playerO = document.querySelector(".player-o .zero");
           playerO.textContent = parseInt(playerO.textContent + 1);
           game.updateScore();
         }
+
+        game.switchPlayer();
       }
     });
   });
