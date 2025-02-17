@@ -98,7 +98,10 @@ const newGame = (() => {
           const draw = document.querySelector(".draw .zero");
           draw.textContent = parseInt(draw.textContent + 1);
           const newGameButton = document.createElement("button");
-          newGameButton.classList.add(".marker");
+          newGameButton.classList.add("new-game");
+          newGameButton.textContent = "New Game";
+          const gameboard = document.querySelector(".gameboard");
+          gameboard.append(newGameButton);
         } else if (status === "X") {
           const playerX = document.querySelector(".player-x .zero");
           playerX.textContent = parseInt(playerX.textContent + 1);
