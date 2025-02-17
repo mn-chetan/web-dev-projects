@@ -96,19 +96,29 @@ const newGame = (() => {
         const status = game.gameStatus();
         if (status === 0) {
           const draw = document.querySelector(".draw .zero");
-          draw.textContent = parseInt(draw.textContent + 1);
+          draw.textContent = parseInt(draw.textContent) + 1;
           const newGameButton = document.createElement("button");
           newGameButton.classList.add("new-game");
           newGameButton.textContent = "New Game";
           const gameboard = document.querySelector(".gameboard");
           gameboard.append(newGameButton);
+
+          newGameButton.addEventListener("click", () => {
+            newGameButton.remove();
+            const cells = document.querySelectorAll(".marker .btn");
+            cells.forEach((cell) => {
+              cell.textContent = "";
+              cell.classList.remove("x", "o");
+            });
+            game.switchPlayer();
+          });
         } else if (status === "X") {
           const playerX = document.querySelector(".player-x .zero");
-          playerX.textContent = parseInt(playerX.textContent + 1);
+          playerX.textContent = parseInt(playerX.textContent) + 1;
           game.updateScore();
         } else if (status === "O") {
           const playerO = document.querySelector(".player-o .zero");
-          playerO.textContent = parseInt(playerO.textContent + 1);
+          playerO.textContent = parseInt(playerO.textContent) + 1;
           game.updateScore();
         }
 
