@@ -81,8 +81,8 @@ const newGame = (() => {
     const markers = document.querySelector(".marker");
     markers.addEventListener("click", (e) => {
       if (e.target.tagName === "BUTTON") {
-        const currentPlayer = game.getCurrentPlayer();
         if (e.target.textContent === "") {
+          const currentPlayer = game.getCurrentPlayer();
           currentPlayer === "X"
             ? e.target.classList.add("x")
             : e.target.classList.add("o");
