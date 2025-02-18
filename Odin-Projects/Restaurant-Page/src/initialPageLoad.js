@@ -4,7 +4,7 @@ function loadContent() {
   const content = document.querySelector("#content");
 
   const introduction = document.createElement("div");
-  introduction.classList.add("introduction");
+  introduction.id = "introduction";
 
   const p1 = document.createElement("p");
   const p2 = document.createElement("p");
