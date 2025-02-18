@@ -1,7 +1,8 @@
 import stroganoff from "./img/stroganoff.webp";
 
 function loadContent() {
-  const content = document.querySelector("#content");
+  const content = document.createElement("div");
+  content.id = "content";
 
   const introduction = document.createElement("div");
   introduction.id = "introduction";
@@ -27,6 +28,8 @@ function loadContent() {
 
   content.append(introduction);
   content.append(img);
+
+  document.body.appendChild(content);
 }
 
 export { loadContent };
