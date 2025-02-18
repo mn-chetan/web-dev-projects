@@ -18,4 +18,12 @@ module.exports = {
   devServer: {
     watchFiles: ["./src/template.html"],
   },
+  module: {
+    rule: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };
