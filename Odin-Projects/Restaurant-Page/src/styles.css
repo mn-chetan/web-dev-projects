@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Exo";
+  src: url("fonts/Exo-Regular.woff2") format("woff2"),
+    url("fonts/Exo-Regular.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Knewave";
+  src: url("fonts/Knewave-Regular.woff2") format("woff2"),
+    url("fonts/Knewave-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Knewave", Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+  font-weight: 400;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.side-nav {
+  display: flex;
+  gap: 6rem;
+}

@@ -19,9 +19,9 @@ module.exports = {
     watchFiles: ["./src/template.html"],
   },
   module: {
-    rule: [
+    rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
     ],
