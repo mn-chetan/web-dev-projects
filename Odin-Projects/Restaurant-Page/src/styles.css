@@ -95,3 +95,8 @@ h1 {
   width: 10rem;
   height: 10rem;
 }
+
+#menu h3 {
+  align-self: center;
+  margin-bottom: 2.5rem;
+}
