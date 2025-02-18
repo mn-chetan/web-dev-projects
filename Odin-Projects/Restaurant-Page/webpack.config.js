@@ -30,7 +30,7 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.webp$/i,
+        test: /\.(webp|jpg)$/i,
         type: "asset/resource",
       },
     ],
