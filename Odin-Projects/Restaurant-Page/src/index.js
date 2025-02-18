@@ -1,4 +1,4 @@
 import "./styles.css";
-import { loadContent } from "./initialPageLoad";
+import { loadContent } from "./about";
 
 loadContent();
