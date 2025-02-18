@@ -59,7 +59,8 @@ function displayMenu() {
 
   //   Dinner
 
-  document.body.appendChild(menu);
+  const container = document.querySelector("#container");
+  container.appendChild(menu);
 }
 
 export { displayMenu };

@@ -29,7 +29,8 @@ function loadContent() {
   content.append(introduction);
   content.append(img);
 
-  document.body.appendChild(content);
+  const container = document.querySelector("#container");
+  container.append(content);
 }
 
 export { loadContent };
