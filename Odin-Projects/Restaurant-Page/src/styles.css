@@ -48,6 +48,8 @@ h1 {
   font-size: 1rem;
 }
 
+/* About */
+
 #content {
   background-color: #edf2f4;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -68,4 +70,28 @@ h1 {
   justify-content: center;
   gap: 1rem;
   margin-left: 6rem;
+}
+
+/* Menu */
+
+#menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#breakfast {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.menu-item img {
+  width: 10rem;
+  height: 10rem;
 }
