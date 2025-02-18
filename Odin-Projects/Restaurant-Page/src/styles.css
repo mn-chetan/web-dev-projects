@@ -47,3 +47,14 @@ h1 {
   background-color: transparent;
   font-size: 1rem;
 }
+
+#content {
+  background-color: #edf2f4;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-height: 30rem;
+}
+
+#content img {
+  height: 30rem;
+  width: 30rem;
+}
