@@ -18,22 +18,32 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  font-family: "Exo";
+  font-weight: 700;
 }
 
 h1 {
-  margin: 0;
   font-family: "Knewave", Cambria, Cochin, Georgia, Times, "Times New Roman",
     serif;
   font-weight: 400;
+  font-size: 2.5rem;
 }
 
 #nav {
   display: flex;
   justify-content: center;
-  gap: 6rem;
+  align-items: center;
+  gap: 8rem;
 }
 
 .side-nav {
   display: flex;
   gap: 6rem;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
 }
