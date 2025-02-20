@@ -1,92 +1,189 @@
-// Game Setup
-(function () {
-  const newGame = document.querySelector(".new-game");
+//
+const gameBoard = () => {
+  const board = new Array(9).fill(null);
 
-  newGame.addEventListener("click", () => {
-    // Remove element from DOM
-    newGame.remove();
+  return {
+    displayBoard: () => board,
+    addMarker: (marker, index) => {
+      if (board[index] === null) board[index] = marker;
+    },
+    isWon: () => {
+      const winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
 
-    // Add hover effect on marker buttons
-    const markers = document.querySelectorAll(".marker .btn");
-    for (let marker of markers) {
-      marker.classList.add("hover");
+      return winningCombos.some((combo) => {
+        const [a, b, c] = combo;
+        return (
+          board[a] !== null && board[a] === board[b] && board[a] === board[c]
+        );
+      });
+    },
+    isDraw: () => {
+      return !board.includes(null);
+    },
+    reset: () => {
+      board.fill(null);
+    },
+  };
+};
+
+const player = (marker, score) => {
+  return { marker, score };
+};
+
+const playGame = () => {
+  const board = gameBoard();
+  const player1 = player("X", 0);
+  const player2 = player("O", 0);
+  let currentPlayer = "X";
+
+  const getBoard = () => board;
+
+  const getCurrentPlayer = () => currentPlayer;
+
+  const switchPlayer = () => {
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    updatePlayerIndicator();
+  };
+
+  const gameStatus = () => {
+    if (board.isWon()) {
+      board.reset();
+      return currentPlayer;
     }
+
+    if (board.isDraw()) {
+      board.reset();
+      return 0;
+    }
+  };
+
+  const updateScore = () => {
+    currentPlayer === "X" ? player1.score++ : player2.score++;
+  };
+
+  const updatePlayerIndicator = () => {
+    const playerIndicator = document.querySelector(".player-marker");
+    if (playerIndicator) {
+      playerIndicator.textContent = currentPlayer;
+      playerIndicator.className = `player-marker ${
+        currentPlayer === "X" ? "x-mark" : "o-mark"
+      }`;
+    } else {
+      const newP = document.createElement("p");
+      newP.textContent = currentPlayer;
+      newP.className = `player-marker ${
+        currentPlayer === "X" ? "x-mark" : "o-mark"
+      }`;
+      const gameboard = document.querySelector(".gameboard");
+      gameboard.append(newP);
+    }
+  };
+
+  return {
+    getBoard,
+    getCurrentPlayer,
+    switchPlayer,
+    gameStatus,
+    updateScore,
+    updatePlayerIndicator,
+  };
+};
+
+const newGame = (() => {
+  const start = document.querySelector(".new-game");
+  start.addEventListener("click", () => {
+    start.remove();
+
+    const game = playGame();
+    game.updatePlayerIndicator(); // Show initial player indicator
+
+    const markers = document.querySelector(".marker");
+    markers.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        const currentPlayer = game.getCurrentPlayer();
+        if (e.target.textContent === "") {
+          currentPlayer === "X"
+            ? e.target.classList.add("x")
+            : e.target.classList.add("o");
+          e.target.textContent = currentPlayer;
+
+          game
+            .getBoard()
+            .addMarker(currentPlayer, parseInt(e.target.dataset.index));
+
+          const status = game.gameStatus();
+          if (status === 0) {
+            const draw = document.querySelector(".draw .zero");
+            draw.textContent = parseInt(draw.textContent) + 1;
+            const newGameButton = document.createElement("button");
+            newGameButton.classList.add("new-game");
+            newGameButton.textContent = "New Game";
+            const gameboard = document.querySelector(".gameboard");
+            gameboard.append(newGameButton);
+
+            newGameButton.addEventListener("click", () => {
+              newGameButton.remove();
+              const cells = document.querySelectorAll(".marker .btn");
+              cells.forEach((cell) => {
+                cell.textContent = "";
+                cell.classList.remove("x", "o");
+              });
+              game.switchPlayer();
+            });
+          } else if (status === "X") {
+            const playerX = document.querySelector(".player-x .zero");
+            playerX.textContent = parseInt(playerX.textContent) + 1;
+            game.updateScore();
+
+            const newGameButton = document.createElement("button");
+            newGameButton.classList.add("new-game");
+            newGameButton.textContent = "New Game";
+            const gameboard = document.querySelector(".gameboard");
+            gameboard.append(newGameButton);
+
+            newGameButton.addEventListener("click", () => {
+              newGameButton.remove();
+              const cells = document.querySelectorAll(".marker .btn");
+              cells.forEach((cell) => {
+                cell.textContent = "";
+                cell.classList.remove("x", "o");
+              });
+              game.switchPlayer();
+            });
+          } else if (status === "O") {
+            const playerO = document.querySelector(".player-o .zero");
+            playerO.textContent = parseInt(playerO.textContent) + 1;
+            game.updateScore();
+
+            const newGameButton = document.createElement("button");
+            newGameButton.classList.add("new-game");
+            newGameButton.textContent = "New Game";
+            const gameboard = document.querySelector(".gameboard");
+            gameboard.append(newGameButton);
+
+            newGameButton.addEventListener("click", () => {
+              newGameButton.remove();
+              const cells = document.querySelectorAll(".marker .btn");
+              cells.forEach((cell) => {
+                cell.textContent = "";
+                cell.classList.remove("x", "o");
+              });
+              game.switchPlayer();
+            });
+          }
+
+          game.switchPlayer();
+        }
+      }
+    });
   });
 })();
-
-// Keep track of current player
-const createTurnManager = function () {
-  let count = 0;
-
-  return {
-    increment: function () {
-      count++;
-    },
-    getCurrentPlayer: function () {
-      return count % 2 === 0 ? "X" : "O";
-    },
-  };
-};
-
-const createGameboard = function () {
-  const markerPlacement = new Array(9);
-  console.log(markerPlacement[0]);
-
-  return {
-    isEmpty: function (index) {
-      return markerPlacement[index] === undefined;
-    },
-    placeMarker: function (index, player) {
-      // Update index with player marker ('X' or 'O')
-      markerPlacement[index] = player;
-    },
-    isWon: function () {
-      // Check if anybody has won
-      if (
-        // Horizontal Wins
-        (markerPlacement[0] !== undefined &&
-          markerPlacement[0] === markerPlacement[1] &&
-          markerPlacement[0] === markerPlacement[2]) ||
-        (markerPlacement[3] !== undefined &&
-          markerPlacement[3] === markerPlacement[4] &&
-          markerPlacement[3] === markerPlacement[5]) ||
-        (markerPlacement[6] !== undefined &&
-          markerPlacement[6] === markerPlacement[7] &&
-          markerPlacement[6] === markerPlacement[8]) ||
-        // Vertical Wins
-        (markerPlacement[0] !== undefined &&
-          markerPlacement[0] === markerPlacement[3] &&
-          markerPlacement[0] === markerPlacement[6]) ||
-        (markerPlacement[1] !== undefined &&
-          markerPlacement[1] === markerPlacement[4] &&
-          markerPlacement[1] === markerPlacement[7]) ||
-        (markerPlacement[2] !== undefined &&
-          markerPlacement[2] === markerPlacement[5] &&
-          markerPlacement[2] === markerPlacement[8]) ||
-        // Diagonal Wins
-        (markerPlacement[0] !== undefined &&
-          markerPlacement[0] === markerPlacement[4] &&
-          markerPlacement[0] === markerPlacement[8]) ||
-        (markerPlacement[2] !== undefined &&
-          markerPlacement[2] === markerPlacement[4] &&
-          markerPlacement[2] === markerPlacement[6])
-      ) {
-        return true;
-      }
-      return false;
-    },
-  };
-};
-
-const createGameController = function () {
-  const turnManager = createTurnManager();
-  const gameboard = createGameboard();
-
-  const marker = document.querySelector(".marker");
-  marker.addEventListener("click", (e) => {
-    console.log(e);
-  });
-};
-
-// Start the game
-const game = createGameController();

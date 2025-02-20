@@ -77,7 +77,7 @@ h1 {
   background-color: #c8e7ff;
 }
 
-.player-0 {
+.player-o {
   background-color: #ffc300;
 }
 
@@ -105,6 +105,8 @@ h1 {
 
 .marker .btn {
   background-color: #4b285d;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
 .new-game {
@@ -128,4 +130,29 @@ h1 {
 
 .hover:hover {
   background-color: #6b00a0;
+}
+
+.x {
+  color: #4cc9f0;
+}
+
+.o {
+  color: #ffc300;
+}
+
+.player-marker {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: var(--btn-border-radius);
+}
+
+.x-mark {
+  background-color: #4cc9f0;
+}
+
+.o-mark {
+  background-color: #ffc300;
 }

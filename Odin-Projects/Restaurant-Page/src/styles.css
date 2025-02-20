@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Exo";
+  src: url("fonts/Exo-Regular.woff2") format("woff2"),
+    url("fonts/Exo-Regular.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Knewave";
+  src: url("fonts/Knewave-Regular.woff2") format("woff2"),
+    url("fonts/Knewave-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Exo";
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Knewave", Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+.side-nav {
+  display: flex;
+  gap: 6rem;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+/* About */
+
+#content {
+  background-color: #edf2f4;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-height: 30rem;
+  display: flex;
+  gap: 6rem;
+  margin-top: 3rem;
+}
+
+#content img {
+  height: 30rem;
+  width: 35rem;
+}
+
+#introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-left: 6rem;
+}
+
+/* Menu */
+
+#menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#breakfast {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.menu-item img {
+  width: 10rem;
+  height: 10rem;
+}
+
+#menu h3 {
+  align-self: center;
+  margin-bottom: 2.5rem;
+}
